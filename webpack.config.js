@@ -34,7 +34,8 @@ config = {
             {test: /\.js$/, loader: 'babel', exclude: [nodeModulesPath]},
             {test: /\.css$/, loader: "style!css" },
             {test: /\.(png|gif|jpg|jpeg)$/, loader: "file-loader"},
-            {test: /\.(woff2?|svg)$/, loader: 'url?limit=10000' }
+            {test: /\.(woff2?|svg)$/, loader: 'url?limit=10000' },
+            {test: /\.(ttf|eot)$/, loader: 'file' }
         ]
     }
 };
