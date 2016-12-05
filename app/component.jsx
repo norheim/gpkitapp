@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery'
 
 class ShoppingList extends React.Component {
     render() {
         return (
             <div className="shopping-list">
-                <h1>Shopping List for {this.props.name}</h1>
+                <h1>Shopping List for <small>{this.props.name}</small></h1>
                 <ul>
                     <li>Instagram</li>
                     <li>WhatsApp</li>
@@ -18,6 +17,6 @@ class ShoppingList extends React.Component {
 }
 
 ReactDOM.render(
-    <ShoppingList name="technerd"/>,
+    <ShoppingList name="mitnerd"/>,
     document.getElementById('react')
 );

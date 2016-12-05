@@ -1,3 +1,4 @@
+//http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/
 var path = require('path');
 var webpack = require('webpack');
 
