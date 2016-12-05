@@ -9,18 +9,22 @@
 <body>
     <h1>Template <small>and example code</small></h1>
     <div class="row body">
-        <div class="col-md-3 cell">
+        <div class="col-md-6 cell">
+            <h2>Hot Module Replacement demo</h2>
+            Click button to the right to get a value saved in app/index.js
+            <h2 id="test_value_container">
+
+            </h2>
+            <div id="further_instructions">
+
+            </div>
+        </div>
+        <div class="col-md-6 cell">
             <div class="input-group"  role="group" >
                 <button class="btn btn-default" type="button" onclick="run_func()">
                     <span class="glyphicon glyphicon-play" aria-hidden="true"></span>Run some javascript
                 </button>
             </div>
-        </div>
-        <div class="col-md-9 cell">
-            Click button to the left to get a value saved in app/index.js
-            <h2 id="test_value_container">
-
-            </h2>
         </div>
     </div>
 
@@ -30,6 +34,10 @@
         function run_func(){
             console.log(exports.test_value);
             $('#test_value_container').html(exports.test_value);
+            var further_instructions = "Go to app/index.js and change test_value" +
+                    " from 'exported value' to 'exported value changed'" +
+                    "save the file (app/index.js), and click the play button again";
+            $('#further_instructions').html(further_instructions);
         }
     </script>
 </body>

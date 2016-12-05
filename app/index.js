@@ -2,8 +2,10 @@ _ = require('lodash');
 $ = require('jquery');
 require('bootstrap-loader');
 
+var value = 'export value';
+
 module.exports = {
-    test_value : 'exported value',
+    test_value : value,
     $ : $
 };
 
