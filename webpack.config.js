@@ -8,6 +8,7 @@ var mainPath = path.resolve(__dirname, 'app', 'index.js');
 config = {
     entry: [
         'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+        'babel-polyfill', // Don't know why needed, but recommended
         mainPath
     ],
     output: {
@@ -31,7 +32,15 @@ config = {
         unknownContextCritical : false,
         loaders: [
             {test: /\.json$/, loader: "json-loader"},
-            {test: /\.js$/, loader: 'babel', exclude: [nodeModulesPath]},
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: [nodeModulesPath],
+                query: {
+                    plugins: ['transform-runtime'], //Don't know why needed, but recommended
+                    presets: ['es2015', 'stage-0', 'react']
+                }
+            },
             {test: /\.css$/, loader: "style!css" },
             {test: /\.(png|gif|jpg|jpeg)$/, loader: "file-loader"},
             {test: /\.(woff2?|svg)$/, loader: 'url?limit=10000' },

@@ -3,7 +3,7 @@ var path = require('path');
 var webpackDevMiddleware = require("webpack-dev-middleware");
 var webpackHotMiddleware = require("webpack-hot-middleware");
 var app = express();
-var PORT = 3000;
+var PORT = 3001;
 
 (function() {
     // Step 1: Create & configure a webpack compiler

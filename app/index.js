@@ -1,11 +1,11 @@
-_ = require('lodash');
-$ = require('jquery');
-require('bootstrap-loader');
-
-var value = 'export value';
+import * as _ from 'lodash';
+import $ from 'jquery';
+import 'bootstrap-loader';
+import './style.css';
+import './component.jsx';
 
 module.exports = {
-    test_value : value,
+    test_value : 'exported value',
     $ : $
 };
 
