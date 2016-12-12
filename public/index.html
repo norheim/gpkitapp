@@ -22,7 +22,7 @@
                 Go to app/component.jsx and change line 20: name="technerd" to name="mitnerd",
                 save, and watch the component update life in your browser
             </div>
-            <p>Testing equations <span id="problem">ax^2 + bx + c = 0</span>.</p>
+            <p>Testing equations <p><span id="answer">x=</span></p>
             <div id="react">
 
             </div>
@@ -38,9 +38,16 @@
 
     <script src="/build/bundle.js"></script>
     <script>
-        var problemSpan = document.getElementById('problem');
         var MQ = MathQuill.getInterface(2);
-        MQ.StaticMath(problemSpan);
+        var answerSpan = document.getElementById('answer');
+        var answerMathField = MQ.MathField(answerSpan, {
+            handlers: {
+                edit: function() {
+                    var enteredMath = answerMathField.latex(); // Get entered math in LaTeX format
+                    console.log(enteredMath);
+                }
+            }
+        });
 
         $ = exports.$;
         function run_func(){
