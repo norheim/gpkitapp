@@ -17,6 +17,6 @@ class ShoppingList extends React.Component {
 }
 
 ReactDOM.render(
-    <ShoppingList name="mitnerd"/>,
+    <ShoppingList name="technerd"/>,
     document.getElementById('react')
 );

@@ -26,6 +26,9 @@ var PORT = 3001;
 var publicPath = path.resolve(__dirname, 'public');
 app.use(express.static(publicPath));
 
+var bowerPath = path.resolve(__dirname, 'bower_components');
+app.use(express.static(bowerPath));
+
 app.listen(PORT, function () {
     console_out = 'Example app listening on port ' + PORT.toString();
     console.log(console_out);

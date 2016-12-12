@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <title>Template</title>
+    <link rel="stylesheet" href="lib/mathquill.css"/>
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="lib/mathquill.min.js"></script>
 </head>
 
 <body>
@@ -19,6 +22,7 @@
                 Go to app/component.jsx and change line 20: name="technerd" to name="mitnerd",
                 save, and watch the component update life in your browser
             </div>
+            <p>Testing equations <span id="problem">ax^2 + bx + c = 0</span>.</p>
             <div id="react">
 
             </div>
@@ -34,6 +38,10 @@
 
     <script src="/build/bundle.js"></script>
     <script>
+        var problemSpan = document.getElementById('problem');
+        var MQ = MathQuill.getInterface(2);
+        MQ.StaticMath(problemSpan);
+
         $ = exports.$;
         function run_func(){
             console.log(exports.test_value);

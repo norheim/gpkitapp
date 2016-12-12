@@ -23,7 +23,7 @@ config = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
-        new webpack.ProvidePlugin({
+        new webpack.ProvidePlugin({ // make jquery globally available, some libraries require it
            $: "jquery",
            jQuery: "jquery"
        })
